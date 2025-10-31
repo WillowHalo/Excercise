@@ -66,7 +66,7 @@ def clean(string):
     try:
         out = float(string)
     except:
-        out = None
+        out = string
     return out
 
 for i in file:
@@ -75,6 +75,11 @@ for i in file:
     for pie in line:
         out.append(clean(pie))
     data.append(out)
+
+ex = [] # kill top
+for row in data:
+    for col in row:
+        ex.append(1)
 data = ray(data)
 
 def median(lis):
@@ -94,5 +99,6 @@ def prop_above(lis):
         if item>avg:
             total += 1
     return total
-
+print((data[0, :]))
+plot()
 # get excerise number

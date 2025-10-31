@@ -69,18 +69,36 @@ def clean(string):
         out = string
     return out
 
-for i in file:
-    line = i.split(",")
-    out = []
-    for pie in line:
-        out.append(clean(pie))
-    data.append(out)
+def remo(inp): # kill top
+    pass
+
+##for i in file:
+##    line = i.split(",")
+##    out = []
+##    for pie in line:
+##        out.append(clean(pie))
+##    data.append(out)
 
 ex = [] # kill top
-for row in data:
-    for col in row:
-        ex.append(1)
-data = ray(data)
+n = 0
+next(file)
+for i in file:
+    line = i.split(",")
+    
+    if type(clean(line[0])) == float:
+        ex.append(clean(line[0]))
+##for row in range(len(data)):
+##    for col in range(row):
+##        i = data[row][col]
+##        if type(i) == float:
+##            ex.append(i)
+
+plot.hist(ex, bins=7)
+plot.title("Hours of Excercise")
+plot.show()
+# kill bottom
+
+##data = ray(data)
 
 def median(lis):
     if len(lis)%2 == 0:
